@@ -5,15 +5,15 @@ import MemberForm from "./MemberForm";
 
 function App() {
   const [members, setMembers] = useState([
-    {
-      name: "Jason Bread", email:"jason@live.com", role:"developer"
-    },
-    {
-      name: "Wilson Land", email: "wilson@hotmail.com", role: "backend"
-    },
-    {
-      name: "Brian Deanish", email: "brian@gmail.com", role: "UX"
-    }
+    // {
+    //   name: "Jason Bread", email:"jason@live.com", role:"developer"
+    // },
+    // {
+    //   name: "Wilson Land", email: "wilson@hotmail.com", role: "backend"
+    // },
+    // {
+    //   name: "Brian Deanish", email: "brian@gmail.com", role: "UX"
+    // }
   ]);
 
   const addMember = (name, email, role) => {
