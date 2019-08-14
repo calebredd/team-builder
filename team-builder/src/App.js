@@ -1,53 +1,30 @@
 import React, { useState } from "react";
+import Member from "./Member";
+import MemberForm from "./MemberForm";
 
-function Member({ member }) {
-  return <div>{member.name}</div>;
-}
-
-function MemberForm({ addMember }) {
-  const [value, setValue] = useState("");
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (!value) return;
-    addMember(value);
-    setValue("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="input"
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
-    </form>
-  );
-}
 
 function App() {
   const [members, setMembers] = useState([
     {
-      name: "Jason Bread"
+      name: "Jason Bread", email:"jason@live.com", role:"developer"
     },
     {
-      name: "Wilson Land"
+      name: "Wilson Land", email: "wilson@hotmail.com", role: "backend"
     },
     {
-      name: "Brian Deanish"
+      name: "Brian Deanish", email: "brian@gmail.com", role: "UX"
     }
   ]);
 
-  const addMember = name => {
-    const newMember = [...members, { name }];
+  const addMember = (name, email, role) => {
+    const newMember = [...members, { name, email, role }];
     setMembers(newMember);
   };
 
   return (
     <div className="app">
       <MemberForm addMember={addMember} />
-      <div className="todo-list">
+      <div>
         {members.map(member => (
           <Member member={member} />
         ))}
